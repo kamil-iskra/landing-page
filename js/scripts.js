@@ -1,6 +1,6 @@
 (function ($) {
     "use strict";
-    
+
     // Google Maps settings
     function regular_map() {
         var var_location = new google.maps.LatLng(50.042182, 22.006649);
@@ -46,6 +46,22 @@
     $('body').scrollspy({
         target: '#mainNav',
         offset: 54
+    });
+
+    // Scroll to top
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 450) {
+            $('#back-to-top').fadeIn();
+        } else {
+            $('#back-to-top').fadeOut();
+        }
+    });
+    // scroll body to 0px on click
+    $('#back-to-top').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
     });
 
 })(jQuery); // End of use strict
